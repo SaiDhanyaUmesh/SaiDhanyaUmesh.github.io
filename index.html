@@ -3,12 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Dhanya Umesh</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sai Dhanya Umesh | Portfolio</title>
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Background Animation */
+        body {
+            background: linear-gradient(-45deg, #2c3e50, #34495e, #2c3e50);
+            background-size: 400% 400%;
+            animation: bgAnimation 10s infinite linear;
+            color: white;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+
+        /* Sections */
+        section {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            border-bottom: 2px solid #f1c40f;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Floating Animation */
+        .floating {
+            animation: floating 3s infinite ease-in-out;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Sai Dhanya Umesh</h1>
+        <h1 class="floating">Sai Dhanya Umesh</h1>
         <p>VLSI Engineer | Data Analyst | Space Enthusiast</p>
     </header>
 
@@ -26,30 +138,18 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>
-            Passionate about VLSI Design and Data Science, I aim to work on innovative projects that merge 
-            technology with my love for space exploration.
-        </p>
+        <p>Passionate about VLSI Design and Data Science, I aim to work on innovative projects that merge technology with my love for space exploration.</p>
     </section>
 
     <section id="internship">
         <h2>Internships</h2>
         <div class="card">
             <h3>Kaynes Technology | Mysore</h3>
-            <p><strong>Surface Mount Technology & PCB Design Intern</strong> (02/2023 - 03/2023)</p>
-            <ul>
-                <li>Gained knowledge of surface mount technology in aerospace and defense.</li>
-                <li>Worked with PCB design tools like Cadence, LTSpice, and Altium.</li>
-            </ul>
+            <p>Worked on PCB design and surface mount technology for aerospace and defense applications.</p>
         </div>
-
         <div class="card">
             <h3>My Problem Solver | Bangalore</h3>
-            <p><strong>Technical Associate Trainee</strong> (09/2022 - 10/2022)</p>
-            <ul>
-                <li>Designed a voice recorder circuit using 24LC512 IC and LM386.</li>
-                <li>Researched different voice recording circuit designs.</li>
-            </ul>
+            <p>Designed a voice recorder circuit using 24LC512 IC and LM386.</p>
         </div>
     </section>
 
@@ -57,17 +157,20 @@
         <h2>Projects</h2>
         <div class="card">
             <h3>Friend – The Health Monitoring Band</h3>
-            <p>Designed a smart health monitoring band for elderly people, capable of detecting falls and measuring vitals.</p>
+            <p>Designed a wearable health monitoring band for elderly people suffering from neurological and cardiovascular disorders. 
+            The device measures pulse rate, body temperature, detects falls, and sends emergency alerts.</p>
         </div>
 
         <div class="card">
             <h3>Star Classification</h3>
-            <p>Used Logistic Regression in Python to classify star types based on physical properties.</p>
+            <p>Utilized Logistic Regression in Python to classify the spectral type of stars based on temperature, absolute magnitude, and radius. 
+            Achieved 89.5% accuracy, demonstrating proficiency in astrophysics data analysis.</p>
         </div>
 
         <div class="card">
             <h3>Design of Absorptive Bandstop Filter</h3>
-            <p>Developed an absorptive bandstop filter using 180nm Bi-CMOS technology to enhance broadband performance.</p>
+            <p>Developed a Bi-CMOS-based Absorptive Bandstop Filter that minimizes insertion loss and enhances return loss. 
+            The project was presented at NCTEST-6 conference.</p>
         </div>
     </section>
 
@@ -99,12 +202,13 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:saidhanyaumesh@gmail.com">saidhanyaumesh@gmail.com</a></p>
+        <p>Email: <a href="mailto:saidhanyaumesh@gmail.com" style="color:yellow;">saidhanyaumesh@gmail.com</a></p>
         <p>Location: Bangalore, Karnataka</p>
     </section>
 
     <footer>
         <p>&copy; 2024 Sai Dhanya Umesh. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
