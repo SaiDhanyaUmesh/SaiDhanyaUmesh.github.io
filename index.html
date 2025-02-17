@@ -3,130 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Dhanya Umesh | Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #4CAF50;
-            color: white;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            font-size: 1.2em;
-        }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        section h2 {
-            font-size: 1.8em;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            margin-top: 20px;
-        }
-        footer p {
-            margin: 0;
-        }
-    </style>
+    <title>Sai Dhanya Umesh</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Sai Dhanya Umesh</h1>
-        <p>VLSI Design Enthusiast | Aspiring Astronomer | Data Science Learner</p>
+        <p>VLSI Engineer | Data Analyst | Space Enthusiast</p>
     </header>
 
-    <section>
-        <h2>Career Objective</h2>
-        <p>I want to secure a position in VLSI Design where I can apply my skills in digital and analog circuit design, FPGA development, and hardware troubleshooting. My goal is to contribute to innovative projects that blend my technical skills with my passion for space exploration, particularly those that integrate VLSI design with astronomy, such as satellite systems and telescopes.</p>
-    </section>
-
-    <section>
-        <h2>Education</h2>
+    <nav>
         <ul>
-            <li><strong>GITAM, Bangalore:</strong> M.Tech VLSI Design (Expected 05/2026)</li>
-            <li><strong>Manipal Institute of Technology:</strong> PGCP - Data Science and Machine Learning (08/2024)</li>
-            <li><strong>Sai Vidya Institute of Technology, Bangalore:</strong> B.E Electronics and Communication Engineering (05/2023)</li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#internship">Internships</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Passionate about VLSI Design and Data Science, I aim to work on innovative projects that merge 
+            technology with my love for space exploration.
+        </p>
     </section>
 
-    <section>
+    <section id="internship">
         <h2>Internships</h2>
-        <ul>
-            <li><strong>Kaynes Technology, Mysore:</strong> Surface Mount Technology & PCB Design Intern (02/2023 - 03/2023)</li>
-            <li><strong>My Problem Solver, Bangalore:</strong> Technical Associate Trainee (09/2022 - 10/2022)</li>
-        </ul>
+        <div class="card">
+            <h3>Kaynes Technology | Mysore</h3>
+            <p><strong>Surface Mount Technology & PCB Design Intern</strong> (02/2023 - 03/2023)</p>
+            <ul>
+                <li>Gained knowledge of surface mount technology in aerospace and defense.</li>
+                <li>Worked with PCB design tools like Cadence, LTSpice, and Altium.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>My Problem Solver | Bangalore</h3>
+            <p><strong>Technical Associate Trainee</strong> (09/2022 - 10/2022)</p>
+            <ul>
+                <li>Designed a voice recorder circuit using 24LC512 IC and LM386.</li>
+                <li>Researched different voice recording circuit designs.</li>
+            </ul>
+        </div>
     </section>
 
-    <section>
+    <section id="projects">
         <h2>Projects</h2>
-        <ul>
-            <li><strong>Friend – The Health Monitoring Band:</strong> Designed a wearable for elderly individuals, measuring vitals and detecting falls.</li>
-            <li><strong>Absorptive Bandstop Filter:</strong> Developed using 180nm Bi-CMOS technology; presented in a national conference.</li>
-            <li><strong>Star Classification:</strong> Used Logistic Regression to classify stars based on astrophysical parameters.</li>
-            <li><strong>Star Data Analysis:</strong> Created data visualizations of star properties using Power BI.</li>
-        </ul>
+        <div class="card">
+            <h3>Friend – The Health Monitoring Band</h3>
+            <p>Designed a smart health monitoring band for elderly people, capable of detecting falls and measuring vitals.</p>
+        </div>
+
+        <div class="card">
+            <h3>Star Classification</h3>
+            <p>Used Logistic Regression in Python to classify star types based on physical properties.</p>
+        </div>
+
+        <div class="card">
+            <h3>Design of Absorptive Bandstop Filter</h3>
+            <p>Developed an absorptive bandstop filter using 180nm Bi-CMOS technology to enhance broadband performance.</p>
+        </div>
     </section>
 
-    <section>
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>GITAM | Bangalore</strong> - M.Tech VLSI Design (2026)</p>
+        <p><strong>Manipal Institute of Technology</strong> - PGCP Data Science and Machine Learning (2024)</p>
+        <p><strong>Sai Vidya Institute of Technology | Bangalore</strong> - B.E Electronics and Communication Engineering (2023)</p>
+    </section>
+
+    <section id="certifications">
         <h2>Certifications</h2>
         <ul>
-            <li>Machine Learning Specialization, DeepLearning.AI & Coursera</li>
-            <li>Network Fundamentals 101, Infosys Springboard</li>
-            <li>Wireless Communication for Everybody, Infosys Springboard</li>
-            <li>Astrophysics, Indian Institute of Astrophysics</li>
-            <li>Introduction to Quantum Computing, IBM Quantum</li>
+            <li>Machine Learning Specialization – DeepLearning.AI & Coursera</li>
+            <li>Astrophysics Summer School – Indian Institute of Astrophysics</li>
+            <li>Introduction to Quantum Computing – IBM Quantum</li>
         </ul>
     </section>
 
-    <section>
+    <section id="skills">
         <h2>Technical Skills</h2>
         <ul>
-            <li>Semiconductor Physics, Analog and Digital IC Design, FPGA Development</li>
-            <li>Python, Data Analysis, HDL Programming (Verilog)</li>
-            <li>Tools: Xilinx Vivado, LTspice, Cadence Virtuoso, EasyEDA</li>
+            <li>Semiconductor Physics, Analog & Digital IC Design</li>
+            <li>FPGA Design & Development (Xilinx Artix-7)</li>
+            <li>Python, Data Analysis & Visualization</li>
+            <li>Tools: Xilinx Vivado, LTspice, NI Multisim, Cadence Virtuoso</li>
         </ul>
     </section>
 
-    <section>
-        <h2>Hobbies</h2>
-        <ul>
-            <li>Visual Astronomy</li>
-            <li>Reading</li>
-            <li>Puzzle Solving</li>
-        </ul>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:saidhanyaumesh@gmail.com">saidhanyaumesh@gmail.com</a></p>
+        <p>Location: Bangalore, Karnataka</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Sai Dhanya Umesh</p>
+        <p>&copy; 2024 Sai Dhanya Umesh. All rights reserved.</p>
     </footer>
 </body>
 </html>
