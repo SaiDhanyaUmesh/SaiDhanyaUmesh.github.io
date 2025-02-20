@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sai Dhanya Umesh | Portfolio</title>
   <style>
-    /* Global Styles (Comic Sans everywhere) */
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -19,60 +19,67 @@
       overflow-x: hidden;
       position: relative;
     }
-    
-    /* --- Rocket with trailing smoke --- */
-    .rocket {
+
+    /* --- Rocket Container, Rocket, and Smoke --- */
+    .rocket-container {
       position: fixed;
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 220px;  /* Adjust to your liking */
-      height: 440px; /* Adjust to your liking */
-      background: url('rocket.png') no-repeat center center;
-      background-size: contain;
       z-index: 100;
-      /* Launch after 3s, flight lasts 5s */
+      width: 220px;
+      height: 440px;
+      /* Animate the entire container upward */
       animation: rocketLaunch 5s forwards;
-      animation-delay: 3s;
+      animation-delay: 3s; /* waits 3s, then 5s flight */
     }
     @keyframes rocketLaunch {
-      0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
-      100% { transform: translateX(-50%) translateY(-100vh); opacity: 0; }
+      0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -120vh);
+        opacity: 0;
+      }
     }
-    
-    /* Smoke container: Adjust 'bottom' for perfect nozzle alignment */
-    .rocket .smoke {
+    .rocket {
       position: absolute;
-      bottom: 30px;    /* Tweak this to match your rocket nozzle exactly */
+      bottom: 0;
+      left: 0;
+      width: 220px;
+      height: 440px;
+      background: url('rocket.png') no-repeat center center;
+      background-size: contain;
+    }
+    .smoke {
+      position: absolute;
+      bottom: 30px;
       left: 23%;
       transform: translateX(-50%);
       width: 0;
       height: 0;
-      z-index: 0;
       overflow: visible;
     }
-    /* Bigger puffs in white */
     .smoke .puff {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 120px;
       height: 120px;
-      /* White smoke effect */
       background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
       border-radius: 50%;
       opacity: 0;
       animation: puff 2s ease-out infinite;
     }
-    /* 8 puffs staggered for continuous effect */
-    .smoke .puff:nth-child(1) { animation-delay: 0s; }
-    .smoke .puff:nth-child(2) { animation-delay: 0.25s; }
-    .smoke .puff:nth-child(3) { animation-delay: 0.5s; }
-    .smoke .puff:nth-child(4) { animation-delay: 0.75s; }
-    .smoke .puff:nth-child(5) { animation-delay: 1s; }
-    .smoke .puff:nth-child(6) { animation-delay: 1.25s; }
-    .smoke .puff:nth-child(7) { animation-delay: 1.5s; }
-    .smoke .puff:nth-child(8) { animation-delay: 1.75s; }
+    .smoke .puff:nth-child(1)  { animation-delay: 0s; }
+    .smoke .puff:nth-child(2)  { animation-delay: 0.25s; }
+    .smoke .puff:nth-child(3)  { animation-delay: 0.5s; }
+    .smoke .puff:nth-child(4)  { animation-delay: 0.75s; }
+    .smoke .puff:nth-child(5)  { animation-delay: 1s; }
+    .smoke .puff:nth-child(6)  { animation-delay: 1.25s; }
+    .smoke .puff:nth-child(7)  { animation-delay: 1.5s; }
+    .smoke .puff:nth-child(8)  { animation-delay: 1.75s; }
     @keyframes puff {
       0% {
         transform: translateY(0) scale(0.5);
@@ -87,11 +94,13 @@
         opacity: 0;
       }
     }
-    
-    /* --- Portfolio Content (hidden until rocket animation finishes) --- */
+
+    /* --- Portfolio Content --- */
     .portfolio-content {
       display: none;
     }
+
+    /* Intro Container with pleiades.jpg background */
     .intro-container {
       height: 100vh;
       display: flex;
@@ -99,18 +108,37 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      background: url('pleiades.jpg') no-repeat center center;
+      background-size: cover;
     }
     .name-container {
       font-size: 32px;
       font-weight: bold;
       margin-bottom: 20px;
     }
+    /* Contact Links */
+    .contact-links {
+      margin-top: 20px;
+    }
+    .contact-links a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border: 1px solid white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .contact-links a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
     .content-container {
       padding: 40px 20px;
       background-color: #111;
     }
     
-    /* --- Horizontal Mindmap --- */
+    /* --- Mindmap Navigation --- */
     .mindmap {
       display: flex;
       justify-content: center;
@@ -134,7 +162,7 @@
       transform: scale(1.1);
       background: rgba(255,255,255,0.2);
     }
-    
+
     /* --- Section Content --- */
     .section {
       display: none;
@@ -163,8 +191,9 @@
   </style>
 </head>
 <body>
-  <!-- Rocket with trailing smoke -->
-  <div class="rocket">
+  <!-- Rocket Container (Rocket + Smoke) -->
+  <div class="rocket-container">
+    <div class="rocket"></div>
     <div class="smoke">
       <div class="puff"></div>
       <div class="puff"></div>
@@ -177,12 +206,19 @@
     </div>
   </div>
   
-  <!-- Portfolio Content (appears after rocket vanishes) -->
+  <!-- Portfolio Content (displayed after rocket animation) -->
   <div class="portfolio-content">
     <div class="intro-container">
-      <div class="name-container">Hello, I am <br> Sai Dhanya Umesh</div>
+      <div class="name-container">
+        Hello, I am <br> Sai Dhanya Umesh
+      </div>
+      <div class="contact-links">
+        <a href="https://github.com/SaiDhanyaUmesh" target="_blank">GitHub</a>
+        <a href="mailto:saidhanyaumesh@gmail.com" target="_blank">Email</a>
+      </div>
     </div>
     <div class="content-container">
+      <!-- Mindmap Navigation -->
       <div class="mindmap">
         <a onclick="showSection('about-container')">About Me</a>
         <a onclick="showSection('education')">Education</a>
@@ -194,7 +230,7 @@
         <a onclick="showSection('hobbies')">Hobbies</a>
       </div>
       
-      <!-- About Me Section -->
+      <!-- Sections -->
       <div id="about-container" class="section">
         <h2>About Me</h2>
         <p>
@@ -203,7 +239,6 @@
         </p>
       </div>
       
-      <!-- Education Section -->
       <div id="education" class="section">
         <h2>Education</h2>
         <p><strong>GITAM, Bangalore</strong></p>
@@ -214,7 +249,6 @@
         <p>B.E. in Electronics and Communication Engineering | Graduated: 05/2023</p>
       </div>
       
-      <!-- Internships Section -->
       <div id="internships" class="section">
         <h2>Internships</h2>
         <h3>Kaynes Technology | Mysore</h3>
@@ -231,7 +265,6 @@
         </ul>
       </div>
       
-      <!-- Skills Section -->
       <div id="skills" class="section">
         <h2>Skills</h2>
         <ul>
@@ -245,7 +278,6 @@
         </ul>
       </div>
       
-      <!-- Tools & Platforms Section -->
       <div id="tools" class="section">
         <h2>Tools & Platforms</h2>
         <ul>
@@ -257,7 +289,6 @@
         </ul>
       </div>
       
-      <!-- Certifications Section -->
       <div id="certifications" class="section">
         <h2>Certifications</h2>
         <ul>
@@ -270,7 +301,6 @@
         </ul>
       </div>
       
-      <!-- Projects Section -->
       <div id="projects" class="section">
         <h2>Projects</h2>
         <p><strong>Friend – The Health Monitoring Band</strong></p>
@@ -291,7 +321,6 @@
         </p>
       </div>
       
-      <!-- Hobbies Section -->
       <div id="hobbies" class="section">
         <h2>Hobbies</h2>
         <ul>
@@ -304,11 +333,14 @@
   </div>
 
   <script>
-    // After 8 seconds total (3s delay + 5s rocket flight), hide rocket & show portfolio content
+    // After 8 seconds (3s delay + 5s rocket flight), hide the rocket-container, show the portfolio content,
+    // and display the About Me section by default.
     document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
-        document.querySelector('.rocket').style.display = 'none';
+        document.querySelector('.rocket-container').style.display = 'none';
         document.querySelector('.portfolio-content').style.display = 'block';
+        // Display the About Me section by default
+        showSection('about-container');
       }, 8000);
     });
 
