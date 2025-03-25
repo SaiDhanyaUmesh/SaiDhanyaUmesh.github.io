@@ -20,7 +20,7 @@
       position: relative;
     }
 
-    /* Rocket Animation */
+    /* --- Rocket Container, Rocket, and Smoke --- */
     .rocket-container {
       position: fixed;
       bottom: 0;
@@ -29,12 +29,19 @@
       z-index: 100;
       width: 220px;
       height: 440px;
+      /* Animate the entire container upward */
       animation: rocketLaunch 5s forwards;
-      animation-delay: 3s;
+      animation-delay: 3s; /* waits 3s, then 5s flight */
     }
     @keyframes rocketLaunch {
-      0% { transform: translate(-50%, 0); opacity: 1; }
-      100% { transform: translate(-50%, -120vh); opacity: 0; }
+      0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -120vh);
+        opacity: 0;
+      }
     }
     .rocket {
       position: absolute;
@@ -45,11 +52,55 @@
       background: url('rocket.png') no-repeat center center;
       background-size: contain;
     }
+    .smoke {
+      position: absolute;
+      bottom: 30px;
+      left: 23%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      overflow: visible;
+    }
+    .smoke .puff {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      opacity: 0;
+      animation: puff 2s ease-out infinite;
+    }
+    .smoke .puff:nth-child(1)  { animation-delay: 0s; }
+    .smoke .puff:nth-child(2)  { animation-delay: 0.25s; }
+    .smoke .puff:nth-child(3)  { animation-delay: 0.5s; }
+    .smoke .puff:nth-child(4)  { animation-delay: 0.75s; }
+    .smoke .puff:nth-child(5)  { animation-delay: 1s; }
+    .smoke .puff:nth-child(6)  { animation-delay: 1.25s; }
+    .smoke .puff:nth-child(7)  { animation-delay: 1.5s; }
+    .smoke .puff:nth-child(8)  { animation-delay: 1.75s; }
+    @keyframes puff {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0.9;
+      }
+      50% {
+        transform: translateY(30px) scale(1.2);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(60px) scale(1.6);
+        opacity: 0;
+      }
+    }
 
-    /* Portfolio Content */
+    /* --- Portfolio Content --- */
     .portfolio-content {
       display: none;
     }
+
+    /* Intro Container with pleiades.jpg background */
     .intro-container {
       height: 100vh;
       display: flex;
@@ -65,6 +116,7 @@
       font-weight: bold;
       margin-bottom: 20px;
     }
+    /* Contact Links */
     .contact-links {
       margin-top: 20px;
     }
@@ -81,15 +133,19 @@
     .contact-links a:hover {
       background-color: rgba(255,255,255,0.2);
     }
-
-    /* Mindmap Navigation */
+    .content-container {
+      padding: 40px 20px;
+      background-color: #111;
+    }
+    
+    /* --- Mindmap Navigation --- */
     .mindmap {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 20px;
       margin: 50px auto;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
     .mindmap a {
       text-decoration: none;
@@ -107,7 +163,7 @@
       background: rgba(255,255,255,0.2);
     }
 
-    /* Section Content */
+    /* --- Section Content --- */
     .section {
       display: none;
       padding: 20px;
@@ -116,9 +172,6 @@
       text-align: left;
       background: #222;
       border-radius: 10px;
-    }
-    .section.active {
-      display: block !important;
     }
     .section h2 {
       font-size: 28px;
@@ -131,72 +184,230 @@
       line-height: 1.6;
       margin-top: 10px;
     }
+    .section ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
 
+    /* --- Mobile Responsive Styles --- */
+    @media (max-width: 600px) {
+      .name-container {
+        font-size: 24px;
+      }
+      .contact-links a {
+        font-size: 16px;
+        padding: 4px 8px;
+      }
+      .mindmap {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .mindmap a {
+        font-size: 16px;
+        padding: 10px;
+      }
+      .section h2 {
+        font-size: 22px;
+      }
+      .section p, .section ul {
+        font-size: 16px;
+      }
+      .content-container {
+        padding: 20px 10px;
+      }
+      .rocket-container {
+        width: 150px;
+        height: 300px;
+      }
+      .rocket {
+        width: 150px;
+        height: 300px;
+      }
+      .smoke .puff {
+        width: 80px;
+        height: 80px;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <!-- Rocket Animation -->
+  <!-- Rocket Container (Rocket + Smoke) -->
   <div class="rocket-container">
     <div class="rocket"></div>
+    <div class="smoke">
+      <div class="puff"></div>
+      <div class="puff"></div>
+      <div class="puff"></div>
+      <div class="puff"></div>
+      <div class="puff"></div>
+      <div class="puff"></div>
+      <div class="puff"></div>
+      <div class="puff"></div>
+    </div>
   </div>
-
-  <!-- Portfolio Content -->
+  
+  <!-- Portfolio Content (displayed after rocket animation) -->
   <div class="portfolio-content">
     <div class="intro-container">
-      <div class="name-container">Hello, I am <br> Sai Dhanya Umesh</div>
+      <div class="name-container">
+        Hello, I am <br> Sai Dhanya Umesh
+      </div>
       <div class="contact-links">
         <a href="https://github.com/SaiDhanyaUmesh" target="_blank">GitHub</a>
         <a href="mailto:saidhanyaumesh@gmail.com" target="_blank">Email</a>
       </div>
     </div>
-
     <div class="content-container">
       <!-- Mindmap Navigation -->
       <div class="mindmap">
+        <a onclick="showSection('about-container')">About Me</a>
+        <a onclick="showSection('education')">Education</a>
+        <a onclick="showSection('internships')">Internships</a>
+        <a onclick="showSection('skills')">Skills</a>
+        <a onclick="showSection('tools')">Tools & Platforms</a>
+        <a onclick="showSection('certifications')">Certifications</a>
         <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('hobbies')">Hobbies</a>
       </div>
-
-      <!-- Projects Section -->
-      <div id="projects" class="section">
-        <h2>Projects</h2>
-
-        <p><strong>Function Generator Circuit</strong></p>
+      
+      <!-- Sections -->
+      <div id="about-container" class="section">
+        <h2>About Me</h2>
         <p>
-          Designed a function generator circuit using LM741 operational amplifiers to produce square, sine, and triangular waveforms. The circuit achieved a frequency range of <strong>600 Hz to 36.8 kHz</strong> by varying resistor values. A PCB layout was developed to enhance stability and minimize noise.
-        </p>
-
-        <p><strong>Function Generator with Frequency Modifier</strong></p>
-        <p>
-          Implemented a function generator circuit with a frequency modifier to achieve a stable output across a frequency range of <strong>600 Hz to 36.8 kHz</strong>. Simulations and FFT analysis confirmed waveform accuracy, and a PCB layout was designed to improve reliability.
-        </p>
-
-        <p><strong>Colpitts Oscillator Circuit</strong></p>
-        <p>
-          Developed a Colpitts oscillator circuit for RF applications, achieving a stable oscillation frequency of approximately <strong>5.03 MHz</strong>. The design was optimized for frequency stability, and a PCB layout was created to minimize interference and improve signal integrity.
+          I’m passionate about <strong>VLSI Design</strong> and <strong>Data Science</strong>, and I love bringing technology to life through innovative projects.
+          My dream? Combining these skills with my fascination for <strong>aerospace</strong> and <strong>astronomy</strong> to create something truly out of this world! 🚀✨
         </p>
       </div>
+      
+      <div id="education" class="section">
+        <h2>Education</h2>
+        <p><strong>GITAM, Bangalore</strong></p>
+        <p>M.Tech in VLSI Design | Expected Graduation: 05/2026</p>
+        <p><strong>Manipal Institute of Technology, Bangalore</strong></p>
+        <p>PGCP - Data Science and Machine Learning | Graduated: 08/2024</p>
+        <p><strong>Sai Vidya Institute of Technology, Bangalore</strong></p>
+        <p>B.E. in Electronics and Communication Engineering | Graduated: 05/2023</p>
+      </div>
+      
+      <div id="internships" class="section">
+        <h2>Internships</h2>
+        <h3>Kaynes Technology | Mysore</h3>
+        <p><strong>Surface Mount Technology & PCB Design Intern</strong> (02/2023 - 03/2023)</p>
+        <ul>
+          <li>Gained knowledge of the surface mount technology used to assemble PCBs for defense, aerospace, and automobile equipment.</li>
+          <li>Learned circuit and PCB design, working with software like Cadence, LTspice, and Altium.</li>
+        </ul>
+        <h3>My Problem Solver | Bangalore</h3>
+        <p><strong>Technical Associate Trainee</strong> (09/2022 - 10/2022)</p>
+        <ul>
+          <li>Researched various voice recorder circuit designs.</li>
+          <li>Designed a voice recorder and playback circuit using 24LC512 IC and LM386.</li>
+        </ul>
+      </div>
+      
+      <div id="skills" class="section">
+        <h2>Skills</h2>
+        <ul>
+          <li>Semiconductor Physics</li>
+          <li>Analog IC Design</li>
+          <li>Digital IC Design</li>
+          <li>HDL Programming - Verilog</li>
+          <li>FPGA Design and Development - Xilinx Artix-7</li>
+          <li>Python</li>
+          <li>Data Analysis and Visualization</li>
+        </ul>
+      </div>
+      
+      <div id="tools" class="section">
+        <h2>Tools & Platforms</h2>
+        <ul>
+          <li>Xilinx Vivado</li>
+          <li>LTspice</li>
+          <li>NI Multisim</li>
+          <li>Cadence Virtuoso</li>
+          <li>EasyEDA</li>
+        </ul>
+      </div>
+      
+      <div id="certifications" class="section">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Machine Learning Specialization, DeepLearning.AI & Coursera</li>
+          <li>Network Fundamentals 101, December 2022, Infosys Springboard</li>
+          <li>Wireless Communication for Everybody, October 2022, Infosys Springboard</li>
+          <li>Astrophysics, Online Summer School, July 2022, Indian Institute of Astrophysics (IIA), Bengaluru</li>
+          <li>Introduction to Quantum Computing Course, May 2021, IBM Quantum and The Coding School</li>
+          <li>Linux Fundamentals, February 2025, Coursera</li>
+        </ul>
+      </div>
+      
+<div id="projects" class="section">
+    <h2>Projects</h2>
 
+    <p><strong>Friend – The Health Monitoring Band</strong></p>
+    <p>
+        Designed a health monitoring band for elderly people suffering from various neurological and cardiovascular disorders. It measures vitals like pulse rate and temperature, detects movement, and alerts in case of a fall.
+    </p>
+
+    <p><strong>Design of Absorptive Bandstop Filter using 180nm Bi-CMOS Technology</strong></p>
+    <p>
+        Designed an integrated Absorptive Bandstop Filter using 180nm Bi-CMOS technology, minimizing insertion loss and improving return loss. The project was presented at the IETE Sponsored 6th National Conference on Engineering Trends in Engineering, Science and Technology (NCTEST-6).
+    </p>
+
+    <p><strong>Star Classification</strong></p>
+    <p>
+        Utilized Logistic Regression in Python to classify stars based on temperature, absolute magnitude, and radius, demonstrating expertise in machine learning for astrophysical data analysis.
+    </p>
+
+    <p><strong>Star Data Analysis</strong></p>
+    <p>
+        Analyzed a dataset of 240 stars focusing on key attributes such as temperature, luminosity, radius, absolute magnitude, star type, and spectral class. Used Power BI for data visualization to provide insights into stellar properties.
+    </p>
+
+    <p><strong>Function Generator Circuit</strong></p>
+    <p>
+        Designed a function generator circuit using LM741 operational amplifiers to produce square, sine, and triangular waveforms. The circuit achieved a frequency range of <strong>600 Hz to 36.8 kHz</strong> by varying resistor values. A PCB layout was developed to enhance stability and minimize noise.
+    </p>
+
+    <p><strong>Function Generator with Frequency Modifier</strong></p>
+    <p>
+        Implemented a function generator circuit with a frequency modifier to achieve a stable output across a frequency range of <strong>600 Hz to 36.8 kHz</strong>. Simulations and FFT analysis confirmed waveform accuracy, and a PCB layout was designed to improve reliability.
+    </p>
+
+    <p><strong>Colpitts Oscillator Circuit</strong></p>
+    <p>
+        Developed a Colpitts oscillator circuit for RF applications, achieving a stable oscillation frequency of approximately <strong>5.03 MHz</strong>. The design was optimized for frequency stability, and a PCB layout was created to minimize interference and improve signal integrity.
+    </p>
+</div>
+
+      <div id="hobbies" class="section">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Visual Astronomy</li>
+          <li>Reading</li>
+          <li>Sudoku</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <script>
-    // After 8 seconds (3s delay + 5s rocket flight), hide the rocket-container, show the portfolio content
+    // After 8 seconds (3s delay + 5s rocket flight), hide the rocket-container, show the portfolio content,
+    // and display the About Me section by default.
     document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         document.querySelector('.rocket-container').style.display = 'none';
         document.querySelector('.portfolio-content').style.display = 'block';
-        showSection('projects');
+        // Display the About Me section by default
+        showSection('about-container');
       }, 8000);
     });
 
     function showSection(sectionId) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.style.display = 'none');
+      document.getElementById(sectionId).style.display = 'block';
     }
   </script>
-
 </body>
 </html>
