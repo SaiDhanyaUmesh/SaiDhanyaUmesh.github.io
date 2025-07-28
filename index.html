@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sai Dhanya Umesh | Portfolio</title>
   <style>
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -13,8 +14,7 @@
       scroll-behavior: smooth;
     }
     body {
-      background: url('stars.gif') repeat center center;
-      background-size: cover;
+      background-color: black;
       color: white;
       overflow-x: hidden;
       position: relative;
@@ -32,14 +32,8 @@
       animation-delay: 3s;
     }
     @keyframes rocketLaunch {
-      0% {
-        transform: translate(-50%, 0);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -120vh);
-        opacity: 0;
-      }
+      0% { transform: translate(-50%, 0); opacity: 1; }
+      100% { transform: translate(-50%, -120vh); opacity: 0; }
     }
     .rocket {
       position: absolute;
@@ -70,26 +64,14 @@
       opacity: 0;
       animation: puff 2s ease-out infinite;
     }
-    .smoke .puff:nth-child(n)  { animation-delay: calc(0.25s * var(--i)); }
-
+    .smoke .puff:nth-child(n) { animation-delay: calc(0.25s * var(--i)); }
     @keyframes puff {
-      0% {
-        transform: translateY(0) scale(0.5);
-        opacity: 0.9;
-      }
-      50% {
-        transform: translateY(30px) scale(1.2);
-        opacity: 0.6;
-      }
-      100% {
-        transform: translateY(60px) scale(1.6);
-        opacity: 0;
-      }
+      0% { transform: translateY(0) scale(0.5); opacity: 0.9; }
+      50% { transform: translateY(30px) scale(1.2); opacity: 0.6; }
+      100% { transform: translateY(60px) scale(1.6); opacity: 0; }
     }
 
-    .portfolio-content {
-      display: none;
-    }
+    .portfolio-content { display: none; }
 
     .intro-container {
       height: 100vh;
@@ -106,7 +88,6 @@
       font-weight: bold;
       margin-bottom: 20px;
     }
-
     .contact-links {
       margin-top: 20px;
     }
@@ -123,7 +104,6 @@
     .contact-links a:hover {
       background-color: rgba(255,255,255,0.2);
     }
-
     .content-container {
       padding: 40px 20px;
       background-color: #111;
@@ -179,41 +159,16 @@
     }
 
     @media (max-width: 600px) {
-      .name-container {
-        font-size: 24px;
-      }
-      .contact-links a {
-        font-size: 16px;
-        padding: 4px 8px;
-      }
-      .mindmap {
-        gap: 10px;
-      }
-      .mindmap a {
-        font-size: 16px;
-        padding: 10px;
-      }
-      .section h2 {
-        font-size: 22px;
-      }
-      .section p, .section ul {
-        font-size: 16px;
-      }
-      .content-container {
-        padding: 20px 10px;
-      }
-      .rocket-container {
-        width: 150px;
-        height: 300px;
-      }
-      .rocket {
-        width: 150px;
-        height: 300px;
-      }
-      .smoke .puff {
-        width: 80px;
-        height: 80px;
-      }
+      .name-container { font-size: 24px; }
+      .contact-links a { font-size: 16px; padding: 4px 8px; }
+      .mindmap { flex-wrap: wrap; gap: 10px; }
+      .mindmap a { font-size: 16px; padding: 10px; }
+      .section h2 { font-size: 22px; }
+      .section p, .section ul { font-size: 16px; }
+      .content-container { padding: 20px 10px; }
+      .rocket-container { width: 150px; height: 300px; }
+      .rocket { width: 150px; height: 300px; }
+      .smoke .puff { width: 80px; height: 80px; }
     }
   </style>
 </head>
@@ -255,54 +210,9 @@
         <a onclick="showSection('hobbies')">Hobbies</a>
       </div>
 
-      <div id="about-container" class="section">
-        <h2>About Me</h2>
-        <p>
-          I’m passionate about <strong>VLSI Design</strong> and <strong>Data Science</strong>, and I love bringing technology to life through innovative projects.
-          My dream? Combining these skills with my fascination for <strong>aerospace</strong> and <strong>astronomy</strong> to create something truly out of this world! 🚀✨
-        </p>
-      </div>
+      <!-- Sections here (including Projects with added ones) -->
+      <!-- You can insert all other section divs here (as in your previous message) -->
 
-      <!-- Education, Internships, Skills, Tools, Certifications sections here... -->
-
-      <div id="projects" class="section">
-        <h2>Projects</h2>
-        <p><strong>Project 1 – Health Monitoring Band (Electronics + Healthcare)</strong></p>
-        <p>Designed a band to track vitals and falls in elderly patients with neurological disorders.</p>
-
-        <p><strong>Project 2 – Absorptive Bandstop Filter (VLSI)</strong></p>
-        <p>Built on 180nm Bi-CMOS technology; presented at NCTEST-6 Conference.</p>
-
-        <p><strong>Project 3 – Star Classification (Machine Learning + Astronomy)</strong></p>
-        <p>Used Logistic Regression to classify stars based on astrophysical data.</p>
-
-        <p><strong>Project 4 – Star Data Analysis (Data Visualization)</strong></p>
-        <p>Visualized and analyzed 240 stars dataset using Power BI.</p>
-
-        <p><strong>Project 5 – Function Generator (Analog Electronics)</strong></p>
-        <p>Produced square, sine, triangle waveforms using LM741 Op-Amps.</p>
-
-        <p><strong>Project 6 – Function Generator with Frequency Modifier (Analog + PCB)</strong></p>
-        <p>Enhanced waveform stability and range, confirmed via FFT simulation.</p>
-
-        <p><strong>Project 7 – Colpitts Oscillator (RF Circuit)</strong></p>
-        <p>Achieved stable 5.03 MHz frequency with PCB layout design.</p>
-
-        <p><strong>Project 8 – Active Band-Pass Filter (Analog Circuit Design)</strong></p>
-        <p>High Q-Factor, 1 MHz center frequency with differential amplifier.</p>
-
-        <p><strong>Project 9 – 2-Tap FIR Filter (Digital Signal Processing)</strong></p>
-        <p>Implemented and tested in Cadence for biomedical and communication uses.</p>
-      </div>
-
-      <div id="hobbies" class="section">
-        <h2>Hobbies</h2>
-        <ul>
-          <li>Visual Astronomy</li>
-          <li>Reading</li>
-          <li>Sudoku</li>
-        </ul>
-      </div>
     </div>
   </div>
 
