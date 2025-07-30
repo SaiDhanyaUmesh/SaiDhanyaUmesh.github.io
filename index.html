@@ -19,49 +19,7 @@
       overflow-x: hidden;
       position: relative;
     }
- .moon-projects {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 30px auto;
-      background: url('moon.jpg') no-repeat center center;
-      background-size: cover;
-      border-radius: 50%;
-    }
-    .moon-slice {
-      position: absolute;
-      width: 50%;
-      height: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      clip-path: polygon(50% 50%, 100% 0, 100% 100%);
-      transform-origin: 100% 100%;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .moon-slice:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-    .moon-slice span {
-      position: absolute;
-      left: 60%;
-      top: 60%;
-      transform: translate(-50%, -50%) rotate(0deg);
-      color: white;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .project-description {
-      display: none;
-      background: #222;
-      padding: 15px;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 20px auto;
-      text-align: left;
-    }
-    .project-description.active {
-      display: block;
-    }
+
     /* --- Rocket Container, Rocket, and Smoke --- */
     .rocket-container {
       position: fixed;
@@ -383,43 +341,64 @@
       </ul>
     </div>
       
- <div id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="moon-projects">
-      <div class="moon-slice" style="transform: rotate(0deg);" onclick="showProjectDesc(0)"><span style="transform: rotate(-0deg);">Health Band</span></div>
-      <div class="moon-slice" style="transform: rotate(60deg);" onclick="showProjectDesc(1)"><span style="transform: rotate(-60deg);">Bandstop Filter</span></div>
-      <div class="moon-slice" style="transform: rotate(120deg);" onclick="showProjectDesc(2)"><span style="transform: rotate(-120deg);">Star ML</span></div>
-      <div class="moon-slice" style="transform: rotate(180deg);" onclick="showProjectDesc(3)"><span style="transform: rotate(-180deg);">Oscillator</span></div>
-      <div class="moon-slice" style="transform: rotate(240deg);" onclick="showProjectDesc(4)"><span style="transform: rotate(-240deg);">FIR Filter</span></div>
-      <div class="moon-slice" style="transform: rotate(300deg);" onclick="showProjectDesc(5)"><span style="transform: rotate(-300deg);">UART Design</span></div>
-    </div>
+<div id="projects" class="section">
+  <h2>Projects</h2>
 
-    <div id="project-desc-0" class="project-description">
-      <strong>Friend – The Health Monitoring Band:</strong>
-      <p>Designed a health monitoring band for elderly people suffering from various neurological and cardiovascular disorders. It measures vitals like pulse rate and temperature, detects movement, and alerts in case of a fall.</p>
-    </div>
-    <div id="project-desc-1" class="project-description">
-      <strong>Design of Absorptive Bandstop Filter using 180nm Bi-CMOS Technology:</strong>
-      <p>Designed an integrated Absorptive Bandstop Filter using 180nm Bi-CMOS technology, minimizing insertion loss and improving return loss. Presented at the IETE Sponsored NCTEST-6.</p>
-    </div>
-    <div id="project-desc-2" class="project-description">
-      <strong>Star Classification:</strong>
-      <p>Utilized Logistic Regression in Python to classify stars based on temperature, absolute magnitude, and radius, demonstrating expertise in machine learning for astrophysical data analysis.</p>
-    </div>
-    <div id="project-desc-3" class="project-description">
-      <strong>Colpitts Oscillator Circuit:</strong>
-      <p>Developed a Colpitts oscillator circuit for RF applications, achieving a stable oscillation frequency of approximately 5.03 MHz. Designed for frequency stability and PCB layout optimization.</p>
-    </div>
-    <div id="project-desc-4" class="project-description">
-      <strong>2-Tap FIR Filter:</strong>
-      <p>Designed and implemented a 2-Tap FIR filter using digital signal processing techniques for efficient signal smoothing and noise reduction, tested in Cadence Virtuoso.</p>
-    </div>
-    <div id="project-desc-5" class="project-description">
-      <strong>UART Transmitter and Receiver Design in Verilog:</strong>
-      <p>Designed and simulated a combined UART transmitter and receiver module in Verilog with internal loopback, enabling reliable asynchronous serial data communication tested in Vivado.</p>
-    </div>
-  </div>
+  <p><strong>Friend – The Health Monitoring Band</strong></p>
+  <p>
+    Designed a health monitoring band for elderly people suffering from various neurological and cardiovascular disorders. It measures vitals like pulse rate and temperature, detects movement, and alerts in case of a fall.
+  </p>
 
+  <p><strong>Design of Absorptive Bandstop Filter using 180nm Bi-CMOS Technology</strong></p>
+  <p>
+    Designed an integrated Absorptive Bandstop Filter using 180nm Bi-CMOS technology, minimizing insertion loss and improving return loss. The project was presented at the IETE Sponsored 6th National Conference on Engineering Trends in Engineering, Science and Technology (NCTEST-6).
+  </p>
+
+  <p><strong>Star Classification</strong></p>
+  <p>
+    Utilized Logistic Regression in Python to classify stars based on temperature, absolute magnitude, and radius, demonstrating expertise in machine learning for astrophysical data analysis.
+  </p>
+
+  <p><strong>Star Data Analysis</strong></p>
+  <p>
+    Analyzed a dataset of 240 stars focusing on key attributes such as temperature, luminosity, radius, absolute magnitude, star type, and spectral class. Used Power BI for data visualization to provide insights into stellar properties.
+  </p>
+
+  <p><strong>Function Generator Circuit</strong></p>
+  <p>
+    Designed a function generator circuit using LM741 operational amplifiers to produce square, sine, and triangular waveforms. The circuit achieved a frequency range of <strong>600 Hz to 36.8 kHz</strong> by varying resistor values. A PCB layout was developed to enhance stability and minimize noise.
+  </p>
+
+  <p><strong>Function Generator with Frequency Modifier</strong></p>
+  <p>
+    Implemented a function generator circuit with a frequency modifier to achieve a stable output across a frequency range of <strong>600 Hz to 36.8 kHz</strong>. Simulations and FFT analysis confirmed waveform accuracy, and a PCB layout was designed to improve reliability.
+  </p>
+
+  <p><strong>Colpitts Oscillator Circuit</strong></p>
+  <p>
+    Developed a Colpitts oscillator circuit for RF applications, achieving a stable oscillation frequency of approximately <strong>5.03 MHz</strong>. The design was optimized for frequency stability, and a PCB layout was created to minimize interference and improve signal integrity.
+  </p>
+
+  <p><strong>Active Band-Pass Filter with High Q-Factor</strong></p>
+  <p>
+    Implemented an active band-pass filter circuit using operational amplifiers to allow signals within a specific frequency range to pass while attenuating others. Designed a differential amplifier to enhance signal amplification and reduce common-mode noise. Achieved a <strong>center frequency of 1 MHz</strong>, a <strong>bandwidth of 100 kHz</strong>, and a <strong>high Q-Factor</strong> for sharp frequency response.
+  </p>
+
+  <p><strong>2-Tap Finite Impulse Response (FIR) Filter</strong></p>
+  <p>
+    Designed and implemented a <strong>2-Tap FIR filter</strong> using digital signal processing techniques for efficient signal smoothing and noise reduction. The filter was successfully tested in <strong>Cadence Virtuoso</strong>, demonstrating a <strong>linear phase response</strong>, making it suitable for applications in <strong>speech processing, biomedical signal enhancement, and digital communication systems</strong>.
+  </p>
+
+  <p><strong>Real-Time Altitude Threshold Detector for Terrain Awareness and Warning Systems (TAWS)</strong></p>
+  <p>
+    This Verilog-based project simulates real-time altitude monitoring and triggers caution or ground proximity warnings when altitude crosses critical safety thresholds, mimicking a TAWS subsystem in avionics.
+  </p>
+
+  <p><strong>UART Transmitter and Receiver Design in Verilog</strong></p>
+  <p>
+    Designed and simulated a combined UART transmitter and receiver module in Verilog with internal loopback, enabling reliable asynchronous serial data communication tested in Vivado.
+  </p>
+</div>
 
 
       <div id="hobbies" class="section">
@@ -450,11 +429,6 @@
       sections.forEach(section => section.style.display = 'none');
       document.getElementById(sectionId).style.display = 'block';
     }
-        function showProjectDesc(index) {
-      const descriptions = document.querySelectorAll('.project-description');
-      descriptions.forEach(desc => desc.classList.remove('active'));
-      document.getElementById(`project-desc-${index}`).classList.add('active');
-    }
   </script>
 </body>
-</html> 
+</html>
