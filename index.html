@@ -29,8 +29,9 @@
       z-index: 100;
       width: 220px;
       height: 440px;
+      /* Animate the entire container upward */
       animation: rocketLaunch 5s forwards;
-      animation-delay: 3s;
+      animation-delay: 3s; /* waits 3s, then 5s flight */
     }
     @keyframes rocketLaunch {
       0% {
@@ -94,10 +95,12 @@
       }
     }
 
+    /* --- Portfolio Content --- */
     .portfolio-content {
       display: none;
     }
 
+    /* Intro Container with pleiades.jpg background */
     .intro-container {
       height: 100vh;
       display: flex;
@@ -113,6 +116,7 @@
       font-weight: bold;
       margin-bottom: 20px;
     }
+    /* Contact Links */
     .contact-links {
       margin-top: 20px;
     }
@@ -133,6 +137,8 @@
       padding: 40px 20px;
       background-color: #111;
     }
+    
+    /* --- Mindmap Navigation --- */
     .mindmap {
       display: flex;
       justify-content: center;
@@ -156,6 +162,8 @@
       transform: scale(1.1);
       background: rgba(255,255,255,0.2);
     }
+
+    /* --- Section Content --- */
     .section {
       display: none;
       padding: 20px;
@@ -180,6 +188,8 @@
       list-style-type: disc;
       margin-left: 20px;
     }
+
+    /* --- Mobile Responsive Styles --- */
     @media (max-width: 600px) {
       .name-container {
         font-size: 24px;
@@ -221,6 +231,7 @@
   </style>
 </head>
 <body>
+  <!-- Rocket Container (Rocket + Smoke) -->
   <div class="rocket-container">
     <div class="rocket"></div>
     <div class="smoke">
@@ -234,31 +245,180 @@
       <div class="puff"></div>
     </div>
   </div>
-
+  
+  <!-- Portfolio Content (displayed after rocket animation) -->
   <div class="portfolio-content">
-    <!-- Other sections remain unchanged -->
+    <div class="intro-container">
+      <div class="name-container">
+        Hello, I am <br> Sai Dhanya Umesh
+      </div>
+      <div class="contact-links">
+        <a href="https://github.com/SaiDhanyaUmesh" target="_blank">GitHub</a>
+        <a href="mailto:saidhanyaumesh@gmail.com" target="_blank">Email</a>
+      </div>
+    </div>
+    <div class="content-container">
+      <!-- Mindmap Navigation -->
+      <div class="mindmap">
+        <a onclick="showSection('about-container')">About Me</a>
+        <a onclick="showSection('education')">Education</a>
+        <a onclick="showSection('internships')">Internships</a>
+        <a onclick="showSection('skills')">Skills</a>
+        <a onclick="showSection('tools')">Tools & Platforms</a>
+        <a onclick="showSection('certifications')">Certifications</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('hobbies')">Hobbies</a>
+      </div>
+      
+      <!-- Sections -->
+      <div id="about-container" class="section">
+        <h2>About Me</h2>
+        <p>
+          I’m passionate about <strong>VLSI Design</strong> and <strong>Data Science</strong>, and I love bringing technology to life through innovative projects.
+          My dream? Combining these skills with my fascination for <strong>aerospace</strong> and <strong>astronomy</strong> to create something truly out of this world! 🚀✨
+        </p>
+      </div>
+      
+      <div id="education" class="section">
+        <h2>Education</h2>
+        <p><strong>GITAM, Bangalore</strong></p>
+        <p>M.Tech in VLSI Design | Expected Graduation: 05/2026</p>
+        <p><strong>Manipal Institute of Technology, Bangalore</strong></p>
+        <p>PGCP - Data Science and Machine Learning | Graduated: 08/2024</p>
+        <p><strong>Sai Vidya Institute of Technology, Bangalore</strong></p>
+        <p>B.E. in Electronics and Communication Engineering | Graduated: 05/2023</p>
+      </div>
+      
+      <div id="internships" class="section">
+        <h2>Internships</h2>
+        <h3>Kaynes Technology | Mysore</h3>
+        <p><strong>Surface Mount Technology & PCB Design Intern</strong> (02/2023 - 03/2023)</p>
+        <ul>
+          <li>Gained knowledge of the surface mount technology used to assemble PCBs for defense, aerospace, and automobile equipment.</li>
+          <li>Learned circuit and PCB design, working with software like Cadence, LTspice, and Altium.</li>
+        </ul>
+        <h3>My Problem Solver | Bangalore</h3>
+        <p><strong>Technical Associate Trainee</strong> (09/2022 - 10/2022)</p>
+        <ul>
+          <li>Researched various voice recorder circuit designs.</li>
+          <li>Designed a voice recorder and playback circuit using 24LC512 IC and LM386.</li>
+        </ul>
+      </div>
+      
+      <div id="skills" class="section">
+        <h2>Skills</h2>
+        <ul>
+          <li>Semiconductor Physics</li>
+          <li>Analog IC Design</li>
+          <li>Digital IC Design</li>
+          <li>HDL Programming - Verilog</li>
+          <li>Python</li>
+          <li>Data Analysis and Visualization</li>
+        </ul>
+      </div>
+      
+      <div id="tools" class="section">
+        <h2>Tools & Platforms</h2>
+        <ul>
+          <li>Xilinx Vivado</li>
+          <li>LTspice</li>
+          <li>NI Multisim</li>
+          <li>Cadence Virtuoso</li>
+          <li>EasyEDA</li>
+        </ul>
+      </div>
+      
+      <div id="certifications" class="section">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Machine Learning Specialization, DeepLearning.AI & Coursera</li>
+          <li>Network Fundamentals 101, December 2022, Infosys Springboard</li>
+          <li>Wireless Communication for Everybody, October 2022, Infosys Springboard</li>
+          <li>Astrophysics, Online Summer School, July 2022, Indian Institute of Astrophysics (IIA), Bengaluru</li>
+          <li>Introduction to Quantum Computing Course, May 2021, IBM Quantum and The Coding School</li>
+          <li>Linux Fundamentals, February 2025, Coursera</li>
+        </ul>
+      </div>
+      
+<div id="projects" class="section">
+  <h2>Projects</h2>
 
-    <div id="projects" class="section">
-      <h2>Projects</h2>
-      <!-- Existing projects remain unchanged -->
+  <p><strong>Friend – The Health Monitoring Band</strong></p>
+  <p>
+    Designed a health monitoring band for elderly people suffering from various neurological and cardiovascular disorders. It measures vitals like pulse rate and temperature, detects movement, and alerts in case of a fall.
+  </p>
 
-      <p><strong>Real-Time Altitude Threshold Detector for Terrain Awareness and Warning Systems (TAWS)</strong></p>
-      <p>
-        This Verilog-based project simulates real-time altitude monitoring and triggers caution or ground proximity warnings when altitude crosses critical safety thresholds, mimicking a TAWS subsystem in avionics.
-      </p>
+  <p><strong>Design of Absorptive Bandstop Filter using 180nm Bi-CMOS Technology</strong></p>
+  <p>
+    Designed an integrated Absorptive Bandstop Filter using 180nm Bi-CMOS technology, minimizing insertion loss and improving return loss. The project was presented at the IETE Sponsored 6th National Conference on Engineering Trends in Engineering, Science and Technology (NCTEST-6).
+  </p>
 
-      <p><strong>UART Transmitter and Receiver Design in Verilog</strong></p>
-      <p>
-        Designed and simulated a combined UART transmitter and receiver module in Verilog with internal loopback, enabling reliable asynchronous serial data communication tested in Vivado.
-      </p>
+  <p><strong>Star Classification</strong></p>
+  <p>
+    Utilized Logistic Regression in Python to classify stars based on temperature, absolute magnitude, and radius, demonstrating expertise in machine learning for astrophysical data analysis.
+  </p>
+
+  <p><strong>Star Data Analysis</strong></p>
+  <p>
+    Analyzed a dataset of 240 stars focusing on key attributes such as temperature, luminosity, radius, absolute magnitude, star type, and spectral class. Used Power BI for data visualization to provide insights into stellar properties.
+  </p>
+
+  <p><strong>Function Generator Circuit</strong></p>
+  <p>
+    Designed a function generator circuit using LM741 operational amplifiers to produce square, sine, and triangular waveforms. The circuit achieved a frequency range of <strong>600 Hz to 36.8 kHz</strong> by varying resistor values. A PCB layout was developed to enhance stability and minimize noise.
+  </p>
+
+  <p><strong>Function Generator with Frequency Modifier</strong></p>
+  <p>
+    Implemented a function generator circuit with a frequency modifier to achieve a stable output across a frequency range of <strong>600 Hz to 36.8 kHz</strong>. Simulations and FFT analysis confirmed waveform accuracy, and a PCB layout was designed to improve reliability.
+  </p>
+
+  <p><strong>Colpitts Oscillator Circuit</strong></p>
+  <p>
+    Developed a Colpitts oscillator circuit for RF applications, achieving a stable oscillation frequency of approximately <strong>5.03 MHz</strong>. The design was optimized for frequency stability, and a PCB layout was created to minimize interference and improve signal integrity.
+  </p>
+
+  <p><strong>Active Band-Pass Filter with High Q-Factor</strong></p>
+  <p>
+    Implemented an active band-pass filter circuit using operational amplifiers to allow signals within a specific frequency range to pass while attenuating others. Designed a differential amplifier to enhance signal amplification and reduce common-mode noise. Achieved a <strong>center frequency of 1 MHz</strong>, a <strong>bandwidth of 100 kHz</strong>, and a <strong>high Q-Factor</strong> for sharp frequency response.
+  </p>
+
+  <p><strong>2-Tap Finite Impulse Response (FIR) Filter</strong></p>
+  <p>
+    Designed and implemented a <strong>2-Tap FIR filter</strong> using digital signal processing techniques for efficient signal smoothing and noise reduction. The filter was successfully tested in <strong>Cadence Virtuoso</strong>, demonstrating a <strong>linear phase response</strong>, making it suitable for applications in <strong>speech processing, biomedical signal enhancement, and digital communication systems</strong>.
+  </p>
+
+  <p><strong>Real-Time Altitude Threshold Detector for Terrain Awareness and Warning Systems (TAWS)</strong></p>
+  <p>
+    This Verilog-based project simulates real-time altitude monitoring and triggers caution or ground proximity warnings when altitude crosses critical safety thresholds, mimicking a TAWS subsystem in avionics.
+  </p>
+
+  <p><strong>UART Transmitter and Receiver Design in Verilog</strong></p>
+  <p>
+    Designed and simulated a combined UART transmitter and receiver module in Verilog with internal loopback, enabling reliable asynchronous serial data communication tested in Vivado.
+  </p>
+</div>
+
+
+      <div id="hobbies" class="section">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Visual Astronomy</li>
+          <li>Reading</li>
+          <li>Sudoku</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <script>
+    // After 8 seconds (3s delay + 5s rocket flight), hide the rocket-container, show the portfolio content,
+    // and display the About Me section by default.
     document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         document.querySelector('.rocket-container').style.display = 'none';
         document.querySelector('.portfolio-content').style.display = 'block';
+        // Display the About Me section by default
         showSection('about-container');
       }, 8000);
     });
@@ -270,4 +430,4 @@
     }
   </script>
 </body>
-</html>
+</html> 
